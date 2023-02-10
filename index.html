@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./style.css" />
+		<title>Test Nicket7 Software</title>
+	</head>
+	<body class="">
+		<div class="wrapper">
+			<main id="main" class="blue">
+				<header>
+					<a class="home" href="#"
+						><img src="./img/home.png" alt="home"
+					/></a>
+
+					<div class="theme-block">
+						<button class="night"></button>
+						<button class="blue-btn"></button>
+						<button class="red-btn"></button>
+						<button class="black-btn"></button>
+					</div>
+
+					<img class="logo" src="./img/logo.png" alt="logo" />
+				</header>
+				<section class="main-block">
+					<h1 class="arial-black gray-text">Measurement report</h1>
+					<div class="flex-row-wrapper">
+						<div class="report-table-wrapper">
+							<div class="scroll-wrapper">
+								<table class="report-table">
+									<thead>
+										<tr>
+											<th>№</th>
+											<th>Date / Time</th>
+											<th>Description</th>
+											<th>Measurement Value</th>
+										</tr>
+									</thead>
+									<tbody id="report">
+										<tr>
+											<td>1</td>
+											<td>05.02.2023 / 12:20:21</td>
+											<td>START UNLOADING</td>
+											<td>1026.00 kg</td>
+										</tr>
+										<tr>
+											<td>2</td>
+											<td>06.02.2023 / 05:10:01</td>
+											<td>Mexico</td>
+											<td>0.00 kg</td>
+										</tr>
+										<tr>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<!-- <input
+								type="range"
+								min="1"
+								max="100"
+								value="100"
+								orient="vertical"
+								class="slider"
+								id="myRange"
+							/> -->
+						</div>
+						<div class="buttons-block">
+							<button>Download pdf</button>
+							<button>Download XLS</button>
+							<button>Send report e-mail</button>
+						</div>
+						<div class="system-info arial-black">
+							<p class="gray-text">System Information</p>
+							<p>
+								Database capacity:
+								<span id="db-capacity">100 MB / 1 GB</span>
+							</p>
+							<p>
+								On since:
+								<span id="on-since">11.09.2022, 07:30:01</span>
+							</p>
+							<p>
+								Users logged in:
+								<span id="users-logged">2</span>
+							</p>
+						</div>
+					</div>
+				</section>
+			</main>
+		</div>
+		<script src="./script.js" defer></script>
+	</body>
+</html>
