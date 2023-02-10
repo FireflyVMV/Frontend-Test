@@ -68,9 +68,9 @@ async function fetchGetJSON(url) {
 }
 // ***** UNCOMMENT BEFORE DEPLOY
 //
-// if (response_time > 0){
-//     intervalID = setInterval(fetchGetJSON, response_time, 'http://localhost:80/api/test');
-// }
+if (response_time > 0){
+    intervalID = setInterval(fetchGetJSON, response_time, 'http://localhost:80/api/test');
+}
 //
 // *****************************
 
