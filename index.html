@@ -4,6 +4,8 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./simplebar.css" />
+		<script src="./simplebar.min.js"></script>
 		<link rel="stylesheet" href="./style.css" />
 		<title>Test Nicket7 Software</title>
 	</head>
@@ -28,7 +30,7 @@
 					<h1 class="arial-black gray-text">Measurement report</h1>
 					<div class="flex-row-wrapper">
 						<div class="report-table-wrapper">
-							<div class="scroll-wrapper">
+							<div class="scroll-wrapper" id="scrollable-el">
 								<table class="report-table">
 									<thead>
 										<tr>
@@ -90,15 +92,6 @@
 									</tbody>
 								</table>
 							</div>
-							<!-- <input
-								type="range"
-								min="1"
-								max="100"
-								value="100"
-								orient="vertical"
-								class="slider"
-								id="myRange"
-							/> -->
 						</div>
 						<div class="buttons-block">
 							<button>Download pdf</button>

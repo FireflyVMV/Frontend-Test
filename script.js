@@ -2,9 +2,9 @@
 
 const docBody = document.querySelector("body");
 const reportTable = document.getElementById("report");
-const dbCapacity = document.getElementById("db-capacity");
-const onSince = document.getElementById("on-since");
-const usersLogged = document.getElementById("users-logged");
+// const dbCapacity = document.getElementById("db-capacity");
+// const onSince = document.getElementById("on-since");
+// const usersLogged = document.getElementById("users-logged");
 const main = document.getElementById("main");
 let intervalID;
 
@@ -40,6 +40,8 @@ function renderReportTable(arr) {
     }
 
     reportTable.innerHTML = temp;
+    simpleBar.recalculate();
+    myHeightRecalculate();
 }
 
 
@@ -68,9 +70,9 @@ async function fetchGetJSON(url) {
 }
 // ***** UNCOMMENT BEFORE DEPLOY
 //
-if (response_time > 0){
-    intervalID = setInterval(fetchGetJSON, response_time, 'http://localhost:80/api/test');
-}
+// if (response_time > 0){
+//     intervalID = setInterval(fetchGetJSON, response_time, 'http://localhost:80/api/test');
+// }
 //
 // *****************************
 
@@ -92,3 +94,19 @@ document.querySelector(".night").onclick = () => themeSwitch();
 document.querySelector(".red-btn").onclick = () => colorSwitch("red");
 document.querySelector(".blue-btn").onclick = () => colorSwitch("blue");
 document.querySelector(".black-btn").onclick = () => colorSwitch("black");
+
+
+
+// custom scrollbar
+function myHeightRecalculate() {
+    const tHeadWidth = document.querySelector(".report-table").querySelector("thead").offsetHeight;
+    const scroll = document.querySelector(".simplebar-track.simplebar-vertical");
+    scroll.style.height = `calc(100% - ${tHeadWidth}px + 2px)`;
+    scroll.style.top = `${tHeadWidth}px`;
+}
+
+const simpleBar = new SimpleBar(document.getElementById("scrollable-el"), {
+    autoHide: false,
+    scrollbarMinSize: 30
+});
+myHeightRecalculate();

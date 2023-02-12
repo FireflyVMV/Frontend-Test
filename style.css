@@ -113,7 +113,7 @@ h1 {
 
 .scroll-wrapper {
 	height: 40vmin;
-	overflow-y: scroll;
+	/* overflow-y: scroll; */
 }
 
 .report-table {
@@ -158,7 +158,7 @@ h1 {
 button {
 	margin: 1.75vmin 0 0 3.5vmin;
 	padding: 0.88vmin;
-	border: 1px solid black;
+	border: 1px solid #42719b;
 	color: white;
 	cursor: pointer;
 	transition-duration: 0.4s;
@@ -167,7 +167,7 @@ button {
 }
 
 /* custom scrollbar start */
-input[type="range"][orient="vertical"] {
+/* input[type="range"][orient="vertical"] {
 	writing-mode: bt-lr;
 	appearance: slider-vertical;
 }
@@ -198,14 +198,15 @@ input[type="range"][orient="vertical"] {
 	height: 25px;
 	background: #5b9bd5;
 	cursor: pointer;
-}
+} */
 
 /* custom scrollbar end */
 
 /* theme/color mode block */
 
 .blue .report-table th,
-.blue .buttons-block button {
+.blue .buttons-block button,
+.blue .simplebar-scrollbar.simplebar-visible:before {
 	background: #5b9bd5;
 }
 .blue .buttons-block button:hover,
@@ -218,9 +219,15 @@ input[type="range"][orient="vertical"] {
 .blue .report-table tr:nth-child(odd) {
 	background: #e9eff7;
 }
+.blue .buttons-block button,
+.blue .simplebar-scrollbar.simplebar-visible:before,
+.blue .simplebar-track:before {
+	border-color: #42719b;
+}
 /*  */
 .red .report-table th,
-.red .buttons-block button {
+.red .buttons-block button,
+.red .simplebar-scrollbar.simplebar-visible:before {
 	background: #e66a45;
 }
 .red .report-table tr:nth-child(even) {
@@ -229,9 +236,15 @@ input[type="range"][orient="vertical"] {
 .red .report-table tr:nth-child(odd) {
 	background: #e66a4518;
 }
+.red .buttons-block button,
+.red .simplebar-scrollbar.simplebar-visible:before,
+.red .simplebar-track:before {
+	border-color: #803b26;
+}
 /*  */
 .black .report-table th,
-.black .buttons-block button {
+.black .buttons-block button,
+.black .simplebar-scrollbar.simplebar-visible:before {
 	background: #000000;
 }
 .black .report-table tr:nth-child(even) {
@@ -242,6 +255,11 @@ input[type="range"][orient="vertical"] {
 }
 .black .buttons-block button:hover {
 	background: #555;
+}
+.black .buttons-block button,
+.black .simplebar-scrollbar.simplebar-visible:before,
+.black .simplebar-track:before {
+	border-color: #4d4d4d;
 }
 /*  */
 .dark-mode .wrapper {
@@ -264,6 +282,9 @@ input[type="range"][orient="vertical"] {
 }
 .dark-mode .blue .report-table tr:nth-child(odd) {
 	background: #5b9bd518;
+}
+.dark-mode .simplebar-track:before {
+	background: #2b2b2b;
 }
 
 /* theme/color mode block  end */
@@ -363,4 +384,31 @@ input[type="range"][orient="vertical"] {
 	.buttons-block button {
 		margin-left: 0;
 	}
+}
+
+/* custom scroll */
+.simplebar-scrollbar.simplebar-visible:before {
+	opacity: 1;
+
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	border: 1px solid #42719b;
+}
+
+.simplebar-track.simplebar-vertical {
+	height: calc(100% + 2px);
+	width: 40px;
+	right: -5px;
+}
+.simplebar-track:before {
+	position: absolute;
+	content: "";
+	display: block;
+	left: 10%;
+	width: 80%;
+	height: calc(100% - 2px);
+	border: 1px solid #5b9bd5;
+	background: #f2f2f2;
 }
